@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Starling Builder Scaffold" package="starlingbuilder.scaffold" version="1.0.0" company="OpenFL" />
+	<app main="Main" path="Export" file="Main" />
+
+    <window width="640" height="960" orientation="portrait" vsync="true" fps="60" hardware="true" allow-shaders="true" require-shaders="true" depth-buffer="false" stencil-buffer="true" background="0xffffff" />
+
+	<source path="src" />
+    <source path="../src" />
+	
+	<haxelib name="openfl" />
+    <haxelib name="starling" />
+    <haxelib name="format" />
+	
+	<assets path="assets" rename="assets" />
+
+    <haxeflag name="-swf-version" value="15" if="flash" />
+
+    <!--<haxeflag name="-debug"/>-->
+
+    <haxedef name="dom" if="html5" />
+
+    <haxedef name="air"/>
+	
+</project>
