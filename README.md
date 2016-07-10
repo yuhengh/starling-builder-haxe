@@ -13,7 +13,7 @@ It should work well on desktop, tablet and phone browsers.
 
 #### Setup OpenFL
 
-    haxelib install openfl
+    haxelib install openfl 3.6.1
 	haxelib run openfl setup
 
 #### Setup Starling and Feathers UI
