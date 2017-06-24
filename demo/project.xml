@@ -12,17 +12,14 @@
 	
 	<haxelib name="openfl" />
     <haxelib name="starling" />
-    <haxelib name="feathers" />
     <haxelib name="format" />
 	
 	<assets path="assets" rename="assets" />
 
     <haxeflag name="-swf-version" value="15" if="flash" />
 
-    <!--<haxeflag name="-debug"/>-->
+    <haxeflag name="-debug"/>
 
     <haxedef name="dom" if="html5" />
 
-    <haxedef name="air"/>
-	
 </project>

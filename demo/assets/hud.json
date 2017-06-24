@@ -226,16 +226,10 @@
           },
           {
             "children":[],
-            "cls":"feathers.controls.LayoutGroup",
+            "cls":"starling.display.Sprite",
             "customParams":{},
             "params":{
               "height":146,
-              "layout":{
-                "cls":"feathers.layout.TiledRowsLayout",
-                "constructorParams":[],
-                "customParams":{},
-                "params":{}
-              },
               "name":"objective_container",
               "width":160,
               "x":38.5,
@@ -276,93 +270,79 @@
             }
           },
           {
-            "children":[
+            "cls":"starling.display.Button",
+            "constructorParams":[
               {
-                "cls":"starling.display.Button",
-                "constructorParams":[
-                  {
-                    "cls":"starling.textures.Texture",
-                    "textureName":"boostslot_bg_green"
-                  }
-                ],
-                "customParams":{},
-                "params":{
-                  "height":83.73,
-                  "name":"boostslot_bg_green",
-                  "scaleX":0.82,
-                  "scaleY":0.82,
-                  "width":110
-                }
-              },
-              {
-                "cls":"starling.display.Button",
-                "constructorParams":[
-                  {
-                    "cls":"starling.textures.Texture",
-                    "textureName":"boostslot_bg_green"
-                  }
-                ],
-                "customParams":{},
-                "params":{
-                  "height":83.73,
-                  "name":"boostslot_bg_green",
-                  "scaleX":0.82,
-                  "scaleY":0.82,
-                  "width":110,
-                  "x":110
-                }
-              },
-              {
-                "cls":"starling.display.Button",
-                "constructorParams":[
-                  {
-                    "cls":"starling.textures.Texture",
-                    "textureName":"boostslot_bg_green"
-                  }
-                ],
-                "customParams":{},
-                "params":{
-                  "height":83.73,
-                  "name":"boostslot_bg_green",
-                  "scaleX":0.82,
-                  "scaleY":0.82,
-                  "width":110,
-                  "x":220
-                }
-              },
-              {
-                "cls":"starling.display.Button",
-                "constructorParams":[
-                  {
-                    "cls":"starling.textures.Texture",
-                    "textureName":"boostslot_bg_green"
-                  }
-                ],
-                "customParams":{},
-                "params":{
-                  "height":83.73,
-                  "name":"boostslot_bg_green",
-                  "scaleX":0.82,
-                  "scaleY":0.82,
-                  "width":110,
-                  "x":330
-                }
+                "cls":"starling.textures.Texture",
+                "textureName":"boostslot_bg_green"
               }
             ],
-            "cls":"feathers.controls.LayoutGroup",
             "customParams":{},
             "params":{
-              "height":1,
-              "layout":{
-                "cls":"feathers.layout.HorizontalLayout",
-                "constructorParams":[],
-                "customParams":{},
-                "params":{}
-              },
-              "name":"obj2",
-              "width":1,
-              "x":31,
-              "y":6
+              "height":83.64,
+              "name":"boostslot_bg_green",
+              "scaleX":0.82,
+              "scaleY":0.82,
+              "width":109.88,
+              "x":366.88,
+              "y":5.36
+            }
+          },
+          {
+            "cls":"starling.display.Button",
+            "constructorParams":[
+              {
+                "cls":"starling.textures.Texture",
+                "textureName":"boostslot_bg_green"
+              }
+            ],
+            "customParams":{},
+            "params":{
+              "height":83.64,
+              "name":"boostslot_bg_green",
+              "scaleX":0.82,
+              "scaleY":0.82,
+              "width":109.88,
+              "x":137.12,
+              "y":5.36
+            }
+          },
+          {
+            "cls":"starling.display.Button",
+            "constructorParams":[
+              {
+                "cls":"starling.textures.Texture",
+                "textureName":"boostslot_bg_green"
+              }
+            ],
+            "customParams":{},
+            "params":{
+              "height":83.64,
+              "name":"boostslot_bg_green",
+              "scaleX":0.82,
+              "scaleY":0.82,
+              "width":109.88,
+              "x":22.24,
+              "y":5.36
+            }
+          },
+          {
+            "cls":"starling.display.Button",
+            "constructorParams":[
+              {
+                "cls":"starling.textures.Texture",
+                "textureName":"boostslot_bg_green"
+              }
+            ],
+            "customParams":{},
+            "params":{
+              "height":83.64,
+              "name":"boostslot_bg_green",
+              "scaleX":0.82,
+              "scaleY":0.82,
+              "width":109.88,
+              "x":252,
+              "y":5.36
             }
           }
         ],
@@ -386,13 +366,13 @@
         ],
         "customParams":{},
         "params":{
-          "height":78,
+          "height":77.7,
           "name":"_settingsButton",
           "pivotX":72,
           "pivotY":74,
           "scaleX":1.08,
           "scaleY":1.05,
-          "width":78,
+          "width":77.76,
           "x":640,
           "y":860
         }

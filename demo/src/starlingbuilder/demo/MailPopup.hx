@@ -47,7 +47,7 @@ class MailPopup extends Sprite
 
     private function onExit(event:Event):Void
     {
-        PopUpManager.removePopUp(this, true);
+        removeFromParent(true);
     }
 }
 

@@ -7,21 +7,19 @@
  */
 package starlingbuilder.demo;
 
+import starling.display.DisplayObject;
+import starling.text.BitmapFont;
+import starling.text.TextField;
+import starling.textures.TextureAtlas;
+import starling.textures.Texture;
 import feathers.display.Scale9Image;
 import feathers.display.Scale3Image;
 import starling.display.Button;
 import starlingbuilder.extensions.uicomponents.ContainerButton;
 import starling.events.ResizeEvent;
 import starlingbuilder.engine.tween.DefaultTweenBuilder;
-import starling.display.MovieClip;
 import openfl.Assets;
 import haxe.Json;
-import feathers.core.PopUpManager;
-import feathers.layout.AnchorLayout;
-import feathers.layout.FlowLayout;
-import feathers.layout.HorizontalLayout;
-import feathers.layout.TiledRowsLayout;
-import feathers.layout.VerticalLayout;
 
 import starling.core.Starling;
 
@@ -39,19 +37,16 @@ import starlingbuilder.engine.localization.ILocalization;
 class UIBuilderDemo extends Sprite
 {
     inline public static var SHOW_POPUP:String = "showPopup";
-    inline public static var SHOW_LIST:String = "showList";
     inline public static var SHOW_HUD:String = "showHUD";
     inline public static var SHOW_LOCALIZATION:String = "showLocalization";
     inline public static var SHOW_TWEEN:String = "showTween";
     inline public static var SHOW_EXTERNAL_ELEMENT:String = "showExternalElement";
     inline public static var SHOW_MOVIE_CLIP:String = "showMovieClip";
-    inline public static var SHOW_LAYOUT:String = "showLayout";
-    inline public static var SHOW_ANCHOR_LAYOUT:String = "showAnchorLayout";
     inline public static var SHOW_CONTAINER_BUTTON:String = "showContainerButton";
     inline public static var SHOW_PARTICLE_BUTTON:String = "showParticleButton";
     inline public static var SHOW_PIXEL_MASK:String = "showPixelMask";
 
-    public static var linkers:Array<Dynamic> = [Scale3Image, Scale9Image, AnchorLayout, FlowLayout, HorizontalLayout, VerticalLayout, TiledRowsLayout, BlurFilter];
+    public static var linkers:Array<Dynamic> = [Scale3Image, Scale9Image, BlurFilter];
 
     private var _assetMediator:starlingbuilder.demo.AssetMediator;
     private var _sprite:Sprite;
@@ -76,6 +71,7 @@ class UIBuilderDemo extends Sprite
         var loader:LayoutLoader = new LayoutLoader(ParsedLayouts);
 
         loadAssets();
+
         assetManager.loadQueue(function(ratio:Float):Void
         {
             if (ratio == 1)
@@ -84,6 +80,7 @@ class UIBuilderDemo extends Sprite
                 complete();
             }
         });
+
 
         Starling.current.stage.addEventListener(ResizeEvent.RESIZE, onResize);
 
@@ -124,9 +121,7 @@ class UIBuilderDemo extends Sprite
             {label:"localization", event:SHOW_LOCALIZATION},
             {label:"tween", event:SHOW_TWEEN},
             {label:"external element", event:SHOW_EXTERNAL_ELEMENT},
-//                {label:"movie clip", event:SHOW_MOVIE_CLIP},
-            {label:"layout", event:SHOW_LAYOUT},
-            {label:"anchor layout", event:SHOW_ANCHOR_LAYOUT},
+            {label:"movie clip", event:SHOW_MOVIE_CLIP},
             {label:"container button", event:SHOW_CONTAINER_BUTTON}
         ];
     }
@@ -139,8 +134,6 @@ class UIBuilderDemo extends Sprite
         {
             case SHOW_POPUP:
                 createConnectPopup();
-            case SHOW_LIST:
-                createMailPopup();
             case SHOW_HUD:
                 createHUD();
             case SHOW_LOCALIZATION:
@@ -151,10 +144,6 @@ class UIBuilderDemo extends Sprite
                 createExternalElement();
             case SHOW_MOVIE_CLIP:
                 createMovieClipTest();
-            case SHOW_LAYOUT:
-                createLayoutTest();
-            case SHOW_ANCHOR_LAYOUT:
-                createAnchorLayoutTest();
             case SHOW_CONTAINER_BUTTON:
                 createContainerButtonTest();
             case SHOW_PARTICLE_BUTTON:
@@ -167,13 +156,8 @@ class UIBuilderDemo extends Sprite
     private function createConnectPopup():Void
     {
         var popup:ConnectPopup = new ConnectPopup();
-        PopUpManager.addPopUp(popup);
-    }
-
-    private function createMailPopup():Void
-    {
-        var popup:MailPopup = new MailPopup();
-        PopUpManager.addPopUp(popup);
+        center(popup);
+        addChild(popup);
     }
 
     private function createHUD():Void
@@ -206,22 +190,11 @@ class UIBuilderDemo extends Sprite
         addChild(test);
     }
 
-    private function createLayoutTest():Void
-    {
-        var test:LayoutTest = new LayoutTest();
-        addChild(test);
-    }
-
-    private function createAnchorLayoutTest():Void
-    {
-        var test:AnchorLayoutTest = new AnchorLayoutTest();
-        addChild(test);
-    }
-
     private function createContainerButtonTest():Void
     {
         var popup:ContainerButtonPopup = new ContainerButtonPopup();
-        PopUpManager.addPopUp(popup);
+        center(popup);
+        addChild(popup);
     }
 
     private function createParticleTest():Void
@@ -238,6 +211,25 @@ class UIBuilderDemo extends Sprite
 
     private function loadAssets():Void
     {
+
+
+        var ui:Texture = Texture.fromBitmapData(Assets.getBitmapData("assets/ui.png"));
+        var xml:Xml = Xml.parse(Assets.getText("assets/ui.xml"));
+        assetManager.addTexture("ui", ui);
+        assetManager.addTextureAtlas("ui", new TextureAtlas(ui, xml));
+
+        TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmapData(Assets.getBitmapData("assets/LobsterTwoRegular_Size54_ColorFFFFFF_StrokeAF384E_DropShadow560D1B.png")), Xml.parse(Assets.getText("assets/LobsterTwoRegular_Size54_ColorFFFFFF_StrokeAF384E_DropShadow560D1B.fnt"))), "LobsterTwoRegular_Size54_ColorFFFFFF_StrokeAF384E_DropShadow560D1B");
+        TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmapData(Assets.getBitmapData("assets/GrilledCheeseBTN_Size18_ColorFFFFFF_StrokeA8364B.png")), Xml.parse(Assets.getText("assets/GrilledCheeseBTN_Size18_ColorFFFFFF_StrokeA8364B.fnt"))), "GrilledCheeseBTN_Size18_ColorFFFFFF_StrokeA8364B");
+        TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmapData(Assets.getBitmapData("assets/GrilledCheeseBTN_Size36_ColorFFFFFF_StrokeA8364B.png")), Xml.parse(Assets.getText("assets/GrilledCheeseBTN_Size36_ColorFFFFFF_StrokeA8364B.fnt"))), "GrilledCheeseBTN_Size36_ColorFFFFFF_StrokeA8364B");
+        TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmapData(Assets.getBitmapData("assets/GrilledCheeseBTN_Size36_ColorFFFFFF.png")), Xml.parse(Assets.getText("assets/GrilledCheeseBTN_Size36_ColorFFFFFF.fnt"))), "GrilledCheeseBTN_Size36_ColorFFFFFF");
+
+
+        assetManager.addTexture("background", Texture.fromBitmapData(Assets.getBitmapData("assets/background.jpg")));
+        assetManager.addTexture("blue_button", Texture.fromBitmapData(Assets.getBitmapData("assets/blue_button.png")));
+
+
+        /*
+
         assetManager.enqueueWithName(Assets.getBitmapData("assets/ui.png"), "ui");
         assetManager.enqueueWithName(Xml.parse(Assets.getText("assets/ui.xml")), "ui_xml");
 
@@ -254,35 +246,20 @@ class UIBuilderDemo extends Sprite
         assetManager.enqueueWithName(Xml.parse(Assets.getText("assets/GrilledCheeseBTN_Size36_ColorFFFFFF.fnt")), "GrilledCheeseBTN_Size36_ColorFFFFFF_fnt");
 
         assetManager.enqueueWithName(Assets.getBitmapData("assets/background.jpg"), "background");
-
         assetManager.enqueueWithName(Assets.getBitmapData("assets/blue_button.png"), "blue_button");
-    }
 
-    private function movieclipBug():Void
-    {
-        var args:Array<Dynamic> = new Array<Dynamic>();
-        //args.push("abc");
-
-        var t = assetManager.getTextures("meter_");
-
-        args.push(t);
-
-
-        var mv:MovieClip = new MovieClip(args[0]);
-
-        //var mv:MovieClip = Type.createInstance(Type.resolveClass("starling.display.MovieClip"), args);
-        //var mv:MovieClip = new MovieClip(args[0]);
-
-        Starling.current.juggler.add(mv);
-        mv.play();
-        addChild(mv);
-
+        */
     }
 
     private function onResize(event:ResizeEvent):Void
     {
-        _sprite.x = (Starling.current.stage.stageWidth - _sprite.width) * 0.5;
-        _sprite.y = (Starling.current.stage.stageHeight - _sprite.height) * 0.5;
+        center(_sprite);
+    }
+
+    private function center(obj:DisplayObject):Void
+    {
+        obj.x = (Starling.current.stage.stageWidth - obj.width) * 0.5;
+        obj.y = (Starling.current.stage.stageHeight - obj.height) * 0.5;
     }
 
 }

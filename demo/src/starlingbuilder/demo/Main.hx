@@ -17,12 +17,11 @@ class Main extends Sprite
 
     public function new()
     {
-
         super();
 
         stageUtil = new StageUtil(stage);
         starling = new Starling(UIBuilderDemo, stage);
-        starling.showStats = true;
+        //starling.showStats = true;
         starling.stage.addEventListener(ResizeEvent.RESIZE, onResize);
 
         var w:Int = stage.stageWidth;

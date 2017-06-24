@@ -7,6 +7,7 @@
  */
 package starlingbuilder.engine;
 
+import openfl.Vector;
 import starling.textures.Texture;
 
 /**
@@ -65,7 +66,7 @@ interface IAssetMediator
          * @param result vector of the matched textures to return
          * @return vector of the matched textures
          */
-    function getTextures(prefix:String = "", result:Array<Texture> = null):Array<Texture>;
+    function getTextures(prefix:String = "", result:Vector<Texture> = null):Vector<Texture>;
 
     /**
          * Get external data by name.

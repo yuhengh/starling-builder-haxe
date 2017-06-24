@@ -7,6 +7,7 @@
  */
 package starlingbuilder.engine;
 
+import openfl.Vector;
 import starling.textures.Texture;
 import starling.utils.AssetManager;
 
@@ -37,7 +38,7 @@ class DefaultAssetMediator implements IAssetMediator
          * @inheritDoc
          */
 
-    public function getTextures(prefix:String = "", result:Array<Texture> = null):Array<Texture>
+    public function getTextures(prefix:String = "", result:Vector<Texture> = null):Vector<Texture>
     {
         return _assetManager.getTextures(prefix, result);
     }

@@ -1,6 +1,6 @@
 # Starling Builder Haxe
 
-This is a Haxe port of Starling Builder engine. Starling Builder is an open source UI editor for Starling Framework. The original AS3 version repository is from https://github.com/mindjolt/starling-builder-engine
+This is a Haxe port of Starling Builder engine. Starling Builder is an open source UI editor for Starling Framework. The original AS3 version repository is from https://github.com/yuhengh/starling-builder-engine
 
 
 This Haxe version interprets the same layout format of the AS3 version.
@@ -13,15 +13,14 @@ It should work well on desktop, tablet and phone browsers.
 
 #### Setup OpenFL
 
-    haxelib install openfl 3.6.1
+    haxelib install openfl
 	haxelib run openfl setup
 
-#### Setup Starling and Feathers UI
+#### Setup Starling
 
 	haxelib install starling
-	haxelib git feathers https://github.com/vroad/feathers-openfl
 
-Currently the Starling port is based on Starling 1.6 and the Feathers UI port is based on Feathers UI 2.2.
+Currently the Starling port is based on Starling 1.8. Feathers UI port(only partially working) is based on Feathers UI 2.2.
 
 #### Run the demo
 

@@ -1,6 +1,7 @@
 package;
 
 
+import starling.events.Event;
 import starling.events.ResizeEvent;
 import openfl.geom.Rectangle;
 import openfl.geom.Point;
@@ -20,7 +21,7 @@ class Main extends Sprite
 
         stageUtil = new StageUtil(stage);
         starling = new Starling(Game, stage);
-        starling.showStats = true;
+        //starling.showStats = true;
         starling.stage.addEventListener(ResizeEvent.RESIZE, onResize);
 
         starling.start();

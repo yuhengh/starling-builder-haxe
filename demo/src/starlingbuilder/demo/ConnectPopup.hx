@@ -7,8 +7,6 @@
  */
 package starlingbuilder.demo;
 
-import feathers.core.PopUpManager;
-
 import starling.display.Button;
 import starling.display.Sprite;
 import starling.events.Event;
@@ -28,7 +26,7 @@ class ConnectPopup extends Sprite
 
     private function onExit(event:Event):Void
     {
-        PopUpManager.removePopUp(this, true);
+        removeFromParent(true);
     }
 }
 
