@@ -27,10 +27,10 @@
         "customParams":{},
         "params":{
           "color":700465,
-          "fontName":"mini",
+          "fontName":"Verdana",
           "fontSize":46,
           "height":70,
-          "name":"mini",
+          "name":"Verdana",
           "text":"world",
           "width":158,
           "x":130
@@ -62,7 +62,7 @@
         "customParams":{},
         "params":{
           "color":3639506,
-          "fontName":"mini",
+          "fontName":"Verdana",
           "fontSize":46,
           "height":70,
           "name":"hello",

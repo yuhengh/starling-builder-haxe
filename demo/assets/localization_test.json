@@ -29,10 +29,10 @@
         },
         "params":{
           "color":3523141,
-          "fontName":"mini",
+          "fontName":"Verdana",
           "fontSize":46,
           "height":100,
-          "name":"mini",
+          "name":"Verdana",
           "width":200,
           "x":144,
           "y":49.5
@@ -66,10 +66,10 @@
         },
         "params":{
           "color":1305849,
-          "fontName":"mini",
+          "fontName":"Verdana",
           "fontSize":46,
           "height":100,
-          "name":"mini",
+          "name":"Verdana",
           "width":200,
           "x":144,
           "y":108
