@@ -172,6 +172,14 @@ class UIElementFactory
             }
         }
 
+        //hack: flash.geom.Rectangle only exists in flash target
+        #if (display || !flash)
+        if (data.cls == "flash.geom.Rectangle")
+        {
+            data.cls = "openfl.geom.Rectangle";
+        }
+        #end
+
         if (cls == null)
         {
             cls = Type.resolveClass(data.cls);
