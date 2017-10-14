@@ -7,13 +7,12 @@
  */
 package starlingbuilder.demo;
 
+import starling.text.TextFormat;
 import starling.display.DisplayObject;
 import starling.text.BitmapFont;
 import starling.text.TextField;
 import starling.textures.TextureAtlas;
 import starling.textures.Texture;
-import feathers.display.Scale9Image;
-import feathers.display.Scale3Image;
 import starling.display.Button;
 import starlingbuilder.extensions.uicomponents.ContainerButton;
 import starling.events.ResizeEvent;
@@ -46,7 +45,7 @@ class UIBuilderDemo extends Sprite
     inline public static var SHOW_PARTICLE_BUTTON:String = "showParticleButton";
     inline public static var SHOW_PIXEL_MASK:String = "showPixelMask";
 
-    public static var linkers:Array<Dynamic> = [Scale3Image, Scale9Image, BlurFilter];
+    public static var linkers:Array<Dynamic> = [BlurFilter];
 
     private var _assetMediator:starlingbuilder.demo.AssetMediator;
     private var _sprite:Sprite;
@@ -99,9 +98,7 @@ class UIBuilderDemo extends Sprite
             var button:Button = new Button(assetManager.getTexture("blue_button"));
             button.text = data[i].label;
             button.name = data[i].event;
-            button.fontColor = 0xffffff;
-            button.fontName = "GrilledCheeseBTN_Size36_ColorFFFFFF";
-            button.fontSize = 30;
+            button.textFormat = new TextFormat("GrilledCheeseBTN_Size36_ColorFFFFFF", 30, 0xffffff);
             button.y = (button.height + 10) * i;
             button.addEventListener(Event.TRIGGERED, onButtonTrigger);
             _sprite.addChild(button);

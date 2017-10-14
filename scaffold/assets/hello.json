@@ -12,23 +12,18 @@
           },
           {
             "value":""
-          },
-          {
-            "name":"fontName",
-            "value":"Verdana"
-          },
-          {
-            "value":46
-          },
-          {
-            "value":16777215
           }
         ],
         "customParams":{},
         "params":{
-          "color":700465,
-          "fontName":"Verdana",
-          "fontSize":46,
+          "format":{
+            "cls":"starling.text.TextFormat",
+            "customParams":{},
+            "params":{
+              "color":700465,
+              "size":46
+            }
+          },
           "height":70,
           "name":"Verdana",
           "text":"world",
@@ -47,23 +42,18 @@
           },
           {
             "value":""
-          },
-          {
-            "name":"fontName",
-            "value":"Verdana"
-          },
-          {
-            "value":46
-          },
-          {
-            "value":16777215
           }
         ],
         "customParams":{},
         "params":{
-          "color":3639506,
-          "fontName":"Verdana",
-          "fontSize":46,
+          "format":{
+            "cls":"starling.text.TextFormat",
+            "customParams":{},
+            "params":{
+              "color":3639506,
+              "size":46
+            }
+          },
           "height":70,
           "name":"hello",
           "text":"Hello",
@@ -84,5 +74,5 @@
       "y":960
     }
   },
-  "version":"1.0"
+  "version":"2.0"
 }

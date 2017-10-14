@@ -7,6 +7,7 @@
  */
 package starlingbuilder.demo;
 
+import starling.text.TextFormat;
 import starling.display.Button;
 import starling.core.Starling;
 
@@ -50,9 +51,7 @@ class LocalizationTest extends Sprite
         {
             var button:Button = new Button(UIBuilderDemo.assetManager.getTexture("blue_button"));
             button.text = data[i].label;
-            button.fontColor = 0xffffff;
-            button.fontName = "GrilledCheeseBTN_Size36_ColorFFFFFF";
-            button.fontSize = 30;
+            button.textFormat = new TextFormat("GrilledCheeseBTN_Size36_ColorFFFFFF", 30, 0xffffff);
             button.y = (button.height + 10) * i;
             button.addEventListener(Event.TRIGGERED, onButton);
             sprite.addChild(button);

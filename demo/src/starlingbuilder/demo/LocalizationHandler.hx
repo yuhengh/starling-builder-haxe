@@ -36,10 +36,10 @@ class LocalizationHandler extends DefaultLocalizationHandler
         var textField:TextField = cast object;
         if (textField != null)
         {
-            if (locale == "cn_ZH" && textField.fontName == BitmapFont.MINI)
-                textField.fontName = "_sans";
-            else if (textField.fontName == "_sans")
-                textField.fontName = BitmapFont.MINI;
+            if (locale == "cn_ZH" && textField.format.font == BitmapFont.MINI)
+                textField.format.font = "_sans";
+            else if (textField.format.font == "_sans")
+                textField.format.font = BitmapFont.MINI;
         }
 
         super.localize(object, text, paramsDict, locale);
