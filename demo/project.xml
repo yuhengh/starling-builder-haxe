@@ -20,6 +20,4 @@
 
     <haxeflag name="-debug"/>
 
-    <haxedef name="dom" if="html5" />
-
 </project>

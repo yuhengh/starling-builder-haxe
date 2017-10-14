@@ -18,7 +18,5 @@
     <haxeflag name="-swf-version" value="15" if="flash" />
 
     <!--<haxeflag name="-debug"/>-->
-
-    <haxedef name="dom" if="html5" />
 	
 </project>
